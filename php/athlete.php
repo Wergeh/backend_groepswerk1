@@ -12,6 +12,7 @@ if (isset($_GET['id'])){
     $id = $_GET['id'];
 }
 
+//404-Page if id = null
 //if($id = null){
 //    header("Location: https://example.com/myOtherPage.php");
 //}
@@ -57,7 +58,7 @@ $dataAthlete =  GetData($queryAthlete);
                     <tbody>
                     <?php foreach($dataRecords as $row) : ?>
                         <tr>
-                            <td><?php echo $row['Category']?></td>
+                            <td><a class='text-white' href="/backend_groepswerk1/php/world_records.php?filter=<?php echo $row['Category']?>"><?php echo $row['Category']?></a></td>
                             <td><?php echo $row['Discipline']?></td>
                             <td><?php echo $row['Record']?></td>
                             <td><?php echo $row['Date']?></td>

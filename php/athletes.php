@@ -13,9 +13,6 @@ PrintNavbar();
 
         <?php
 
-        date_default_timezone_set("Europe/Brussels");
-        setlocale(LC_TIME, 'nl_NL');
-
         //Default query
         $query = 'select concat_ws(" ",`first name`, `last name`) as Athlete, atleetID as ID, nationaliteit as Nationality
                     from atleet
@@ -30,15 +27,15 @@ PrintNavbar();
         //Check if search param exists
         if (key_exists("search",$_GET)){
             $name = $_GET["search"];
-            $extra = 'having Athlete like "%' . $name . '%"';
+            $extra = $extra . ' having Athlete like "%' . $name . '%"';
         }
         //Check if filter param exists
         if (key_exists("filter",$_GET)){
             $category = $_GET["filter"];
             if (isset($_GET["search"])){
-                $extra = $extra . 'and Category like "%' . $category . '%"';
+                $extra = $extra . ' and Category like "%' . $category . '%"';
             } else {
-                $extra = $extra . 'having Category like "%' . $category . '%"';
+                $extra = $extra . ' having Category like "%' . $category . '%"';
             }
         }
         //Execute query
@@ -56,7 +53,7 @@ PrintNavbar();
             <tbody>
             <?php foreach($data as $row) : ?>
                 <tr>
-                    <td><a class="text-white" href="<?php echo '/groepswerk_backend/php/athlete.php?id=' . $row['ID'] ?>"><?php echo $row['Athlete']?></a></td>
+                    <td><a class="text-white" href="<?php echo '/backend_groepswerk1/php/athlete.php?id=' . $row['ID'] ?>"><?php echo $row['Athlete']?></a></td>
                     <td><?php echo $row['Nationality']?></td>
                 </tr>
             <?php endforeach;?>

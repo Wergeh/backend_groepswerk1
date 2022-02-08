@@ -37,15 +37,15 @@ PrintNavbar();
         //Check if search param exists
         if (key_exists("search",$_GET)){
             $name = $_GET["search"];
-            $extra = $extra . 'having Athlete like "%' . $name . '%"';
+            $extra = $extra . ' having Athlete like "%' . $name . '%"';
         }
         //Check if filter param exists
         if (key_exists("filter",$_GET)){
             $category = $_GET["filter"];
             if (isset($_GET["search"])){
-                $extra = $extra . 'and Category like "%' . $category . '%"';
+                $extra = $extra . ' and Category like "%' . $category . '%"';
             } else {
-                $extra = $extra . 'having Category like "%' . $category . '%"';
+                $extra = $extra . ' having Category like "%' . $category . '%"';
             }
         }
         //Execute query
