@@ -9,6 +9,10 @@ body {
     background-color: #000105;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .jumbotron {
     margin-bottom: 0;
 }
@@ -18,7 +22,7 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #F04057;
+    color: #ff873c;
 }
 
 div.msgs {
@@ -29,4 +33,16 @@ div.msgs {
     margin-bottom: 2rem;
     font-size: 20px;
     border: 1px solid green;
+}
+
+p, h2 {
+    color: white;
+}
+
+p span {
+    color: #ff873c;
+}
+
+h1 {
+    border-bottom: 1px #ff873c solid;
 }
