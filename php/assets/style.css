@@ -46,3 +46,21 @@ p span {
 h1 {
     border-bottom: 1px #ff873c solid;
 }
+
+form{
+    max-width: 180px;
+}
+
+input[type="radio"]{
+    height: 5px;
+    opacity: 0;
+    pointer-events: none;
+}
+input[type="radio"]:checked + label{
+    color: #ff873c;
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1500px;
+    }
+}
