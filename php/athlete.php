@@ -44,7 +44,7 @@ $dataAthlete =  GetData($queryAthlete);
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-white mb-5"><?php echo $dataAthlete[0]['Athlete']?></h1>
+                <h1 class="text-white mb-5 d-inline-block"><?php echo $dataAthlete[0]['Athlete']?></h1>
                 <table class="table table-striped table-dark">
                     <thead>
                     <tr class="font-weight-bold">
