@@ -18,7 +18,7 @@ if (isset($_GET['id'])){
 //}
 
 $queryRecords = 'select c.name as Category, sex as Sex, s.name as Discipline, concat_ws(" ",record,meeteenheid) as Record,
-       concat_ws(" ",`first name`, `last name`) as Athlete, nationaliteit as Nationality, date as Date,
+       concat_ws(" ",first_name, last_name) as Athlete, nationaliteit as Nationality, date as Date,
        plaats as Venue
     from record
         inner join meeteenheid m on record.`FK.meeteenheidID` = m.meeteenheidID
@@ -31,7 +31,7 @@ $queryRecords = 'select c.name as Category, sex as Sex, s.name as Discipline, co
 
 $dataRecords = GetData($queryRecords);
 
-$queryAthlete = 'select concat_ws(" ",`first name`, `last name`) as Athlete, nationaliteit as Nationality
+$queryAthlete = 'select concat_ws(" ",first_name, last_name) as Athlete, nationaliteit as Nationality
                     from atleet
                         inner join nationaliteit n on atleet.`FK.nationaliteitID` = n.nationaliteitID
                         where atleetID = ' . $id;

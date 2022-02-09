@@ -14,7 +14,7 @@ PrintNavbar();
         <?php
 
         //Default query
-        $query = 'select concat_ws(" ",`first name`, `last name`) as Athlete, atleetID as ID, nationaliteit as Nationality
+        $query = 'select concat_ws(" ",first_name, last_name) as Athlete, atleetID as ID, nationaliteit as Nationality
                     from atleet
                     inner join nationaliteit n on atleet.`FK.nationaliteitID` = n.nationaliteitID';
 

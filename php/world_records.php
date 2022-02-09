@@ -13,7 +13,7 @@ setlocale(LC_TIME, 'nl_NL');
 
 //Default query
 $query = 'select c.name as Category, sex as Sex, s.name as Discipline, concat_ws(" ",record,meeteenheid) as Record,
-                        concat_ws(" ",`first name`, `last name`) as Athlete, nationaliteit as Nationality, date as Date,
+                        concat_ws(" ",first_name, last_name) as Athlete, nationaliteit as Nationality, date as Date,
                         plaats as Venue
                     from record
                         inner join meeteenheid m on record.`FK.meeteenheidID` = m.meeteenheidID
