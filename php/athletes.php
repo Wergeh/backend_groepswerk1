@@ -53,7 +53,7 @@ PrintNavbar();
             <tbody>
             <?php foreach($data as $row) : ?>
                 <tr>
-                    <td><a class="text-white" href="<?php echo '/backend_groepswerk1/php/athlete.php?id=' . $row['ID'] ?>"><?php echo $row['Athlete']?></a></td>
+                    <td><a class="text-white" href="<?php echo 'athlete.php?id=' . $row['ID'] ?>"><?php echo $row['Athlete']?></a></td>
                     <td><?php echo $row['Nationality']?></td>
                 </tr>
             <?php endforeach;?>
