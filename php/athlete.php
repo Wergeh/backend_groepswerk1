@@ -58,7 +58,7 @@ $dataAthlete =  GetData($queryAthlete);
                     <tbody>
                     <?php foreach($dataRecords as $row) : ?>
                         <tr>
-                            <td><a class='text-white' href="world_records.php?filter=<?php echo $row['Category']?>"><?php echo $row['Category']?></a></td>
+                            <td><a class='text-white' href="world_records.php?filterO=<?php echo $row['Category']?>"><?php echo $row['Category']?></a></td>
                             <td><?php echo $row['Discipline']?></td>
                             <td><?php echo $row['Record']?></td>
                             <td><?php echo $row['Date']?></td>
