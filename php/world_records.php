@@ -61,7 +61,7 @@ $data = GetData($query . $extra);
 <div class="container">
     <div class="row">
         <div class="col">
-        <form method="get" action="">
+        <form method="get" action="" accept-charset="utf-8">
             <div class="form-group">
             <input class="form-control" type="text" name="search" placeholder="search an athlete">
             </div>
@@ -88,7 +88,7 @@ $data = GetData($query . $extra);
                 ?>
             </div>
             <div class="form-group">
-            <input class="btn btn-dark form-control" type="submit">
+            <input class="btn btn-dark form-control" type="submit" value="filter">
             </div>
         </form>
         </div>
