@@ -12,7 +12,7 @@ date_default_timezone_set("Europe/Brussels");
 setlocale(LC_TIME, 'nl_NL');
 
 //Default query
-$query = 'select c.name as Category, sex as Sex, s.name as Discipline, concat_ws(" ",record,meeteenheid) as Record,
+$query = 'select recordID, c.name as Category, sex as Sex, s.name as Discipline, concat_ws(" ",record,meeteenheid) as Record,
                         concat_ws(" ",first_name, last_name) as Athlete, nationaliteit as Nationality, date as Date,
                         plaats as Venue
                     from record
@@ -117,6 +117,7 @@ $data = GetData($query . $extra);
                     <td><?php echo $row['Nationality']?></td>
                     <td><?php echo $row['Date']?></td>
                     <td><?php echo $row['Venue']?></td>
+                    <td><a href="record_form.php?recordID=<?php echo $row['recordID']?>">Update</a></td>
                 </tr>
             <?php endforeach;?>
             </tbody>

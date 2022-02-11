@@ -1,0 +1,87 @@
+<form id="mainform" name="mainform" method="POST" action="lib/save.php">
+
+    <!-- meta info -->
+    <input type="hidden" id="recordtable" name="table" value="record">
+    <input type="hidden" id="recordpkey" name="pkey" value="recordID">
+    <input type="hidden" id="recordafterinsert" name="afterinsert" value="admin.php">
+    <input type="hidden" id="recordafterupdate" name="afterupdate" value="admin.php">
+    <!-- end meta info -->
+
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@">
+    <p><small>@csrf_token@</small></p>
+    <h2>Record</h2>
+    <!--end security-->
+
+    <div class="form-group row">
+        <label for="recordID" class="col-sm-4 col-form-label">RecordID</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control-plaintext" id="recordID" name="recordID" value="@recordID@">
+            @recordID_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="record" class="col-sm-4 col-form-label">Record</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control-plaintext" id="record" name="record" value="@record@">
+            @record_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="FK.meeteenheidID" class="col-sm-4 col-form-label">FK.meeteenheidID</label>
+        <div class="col-sm-8">
+            @select_meeteenheid@
+            @FK.meeteenheidID_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="worldrecords" class="col-sm-4 col-form-label">Worldrecords</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control-plaintext" id="worldrecords" name="worldrecords" value="@worldrecords@">
+            @worldrecords_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="FK.plaatsID" class="col-sm-4 col-form-label">FK.plaatsID</label>
+        <div class="col-sm-8">
+            @select_plaats@
+            @FK.plaatsID_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="date" class="col-sm-4 col-form-label">Date</label>
+        <div class="col-sm-8">
+            <input type="date" class="form-control-plaintext" id="date" name="date" value="@date@">
+            @date_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="FK.atleetID" class="col-sm-4 col-form-label">FK.atleetID</label>
+        <div class="col-sm-8">
+            @select_atleet@
+            @FK.atleetID_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="FK.sportsID" class="col-sm-4 col-form-label">FK.sportsID</label>
+        <div class="col-sm-8">
+            @select_sports@
+            @FK.sportsID_error@
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label"></label>
+        <div class="col-sm-8">
+            <input type="submit" value="Save">
+        </div>
+    </div>
+
+</form>
