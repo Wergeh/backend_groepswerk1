@@ -3,8 +3,8 @@
     <!-- meta info -->
     <input type="hidden" id="recordtable" name="table" value="record">
     <input type="hidden" id="recordpkey" name="pkey" value="recordID">
-    <input type="hidden" id="recordafterinsert" name="afterinsert" value="admin.php">
-    <input type="hidden" id="recordafterupdate" name="afterupdate" value="admin.php">
+    <input type="hidden" id="recordafterinsert" name="afterinsert" value="world_records.php">
+    <input type="hidden" id="recordafterupdate" name="afterupdate" value="world_records.php">
     <!-- end meta info -->
 
     <!--security-->
@@ -30,10 +30,10 @@
     </div>
 
     <div class="form-group row">
-        <label for="FK.meeteenheidID" class="col-sm-4 col-form-label">FK.meeteenheidID</label>
+        <label for="FK_meeteenheidID" class="col-sm-4 col-form-label">FK_meeteenheidID</label>
         <div class="col-sm-8">
             @select_meeteenheid@
-            @FK.meeteenheidID_error@
+            @FK_meeteenheidID_error@
         </div>
     </div>
 
@@ -46,10 +46,10 @@
     </div>
 
     <div class="form-group row">
-        <label for="FK.plaatsID" class="col-sm-4 col-form-label">FK.plaatsID</label>
+        <label for="FK_plaatsID" class="col-sm-4 col-form-label">FK_plaatsID</label>
         <div class="col-sm-8">
             @select_plaats@
-            @FK.plaatsID_error@
+            @FK_plaatsID_error@
         </div>
     </div>
 
@@ -62,18 +62,18 @@
     </div>
 
     <div class="form-group row">
-        <label for="FK.atleetID" class="col-sm-4 col-form-label">FK.atleetID</label>
+        <label for="FK_atleetID" class="col-sm-4 col-form-label">FK_atleetID</label>
         <div class="col-sm-8">
             @select_atleet@
-            @FK.atleetID_error@
+            @FK_atleetID_error@
         </div>
     </div>
 
     <div class="form-group row">
-        <label for="FK.sportsID" class="col-sm-4 col-form-label">FK.sportsID</label>
+        <label for="FK_sportsID" class="col-sm-4 col-form-label">FK_sportsID</label>
         <div class="col-sm-8">
             @select_sports@
-            @FK.sportsID_error@
+            @FK_sportsID_error@
         </div>
     </div>
 

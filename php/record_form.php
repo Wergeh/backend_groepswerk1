@@ -20,17 +20,17 @@ PrintJumbo( $title = "change record", $subtitle = "" );
 
         //add extra elements
         $extra_elements['csrf_token'] = GenerateCSRF( "record_form.php"  );
-        $extra_elements['select_meeteenheid'] = MakeSelect( $fkey = 'FK.meeteenheidID',
-            $value = $row['FK.meeteenheidID'] ,
+        $extra_elements['select_meeteenheid'] = MakeSelect( $fkey = 'FK_meeteenheidID',
+            $value = $row['FK_meeteenheidID'] ,
             $sql = "select meeteenheidID, meeteenheid from meeteenheid" );
-        $extra_elements['select_plaats'] = MakeSelect( $fkey = 'FK.plaatsID',
-            $value = $row['FK.plaatsID'] ,
+        $extra_elements['select_plaats'] = MakeSelect( $fkey = 'FK_plaatsID',
+            $value = $row['FK_plaatsID'] ,
             $sql = "select plaatsID, plaats from plaats" );
-        $extra_elements['select_atleet'] = MakeSelect( $fkey = 'FK.atleetID',
-            $value = $row['FK.atleetID'] ,
+        $extra_elements['select_atleet'] = MakeSelect( $fkey = 'FK_atleetID',
+            $value = $row['FK_atleetID'] ,
             $sql = 'select atleetID, concat_ws(" ",first_name, last_name) as Athlete from atleet' );
-        $extra_elements['select_sports'] = MakeSelect( $fkey = 'FK.sportsID',
-            $value = $row['FK.sportsID'] ,
+        $extra_elements['select_sports'] = MakeSelect( $fkey = 'FK_sportsID',
+            $value = $row['FK_sportsID'] ,
             $sql = 'select sports.id, concat_ws(" ", sports.name,c.name) as sport from sports inner join cat c on sports.cat_id = c.id' );
 
 
