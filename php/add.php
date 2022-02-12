@@ -45,7 +45,7 @@ PrintNavbar();
             $sql = 'select atleetID, concat_ws(" ",first_name, last_name) as Athlete from atleet' );
         $extra_elements['select_sports'] = MakeSelect( $fkey = 'FK_sportsID',
             $value = $row['FK_sportsID'] ,
-            $sql = 'select sports.id, concat_ws(" ", sports.name,c.name) as sport from sports inner join cat c on sports.cat_id = c.id' );
+            $sql = 'select sports.id, concat_ws(" ", sports.name,c.name, sports.inoutDoor) as sport from sports inner join cat c on sports.cat_id = c.id' );
 
         //merge
         $output = MergeViewWithData( $output, $data );
