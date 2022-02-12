@@ -24,7 +24,7 @@ $queryRecords = 'select c.name as Category, sex as Sex, s.name as Discipline, co
         inner join meeteenheid m on record.`FK_meeteenheidID` = m.meeteenheidID
         inner join plaats p on record.`FK_plaatsID` = p.plaatsID
         inner join atleet a on record.`FK_atleetID` = a.atleetID
-        inner join nationaliteit n on a.`FK.nationaliteitID` = n.nationaliteitID
+        inner join nationaliteit n on a.`FK_nationaliteitID` = n.nationaliteitID
         inner join sports s on record.`FK_sportsID` = s.id
         inner join cat c on s.cat_id = c.id
         where atleetID = ' . $id;
@@ -33,7 +33,7 @@ $dataRecords = GetData($queryRecords);
 
 $queryAthlete = 'select concat_ws(" ",first_name, last_name) as Athlete, nationaliteit as Nationality
                     from atleet
-                        inner join nationaliteit n on atleet.`FK.nationaliteitID` = n.nationaliteitID
+                        inner join nationaliteit n on atleet.`FK_nationaliteitID` = n.nationaliteitID
                         where atleetID = ' . $id;
 
 $dataAthlete =  GetData($queryAthlete);

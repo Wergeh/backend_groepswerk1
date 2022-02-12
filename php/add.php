@@ -57,6 +57,9 @@ PrintNavbar();
         ?>
 
     </div>
+    <div class="row">
+        <a href="addAthlete.php" class="btn btn-dark" >Add new athlete</a>
+    </div>
 </div>
 
 </body>
