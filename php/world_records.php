@@ -118,6 +118,7 @@ $data = GetData($query . $extra);
                     <td><?php echo $row['Date']?></td>
                     <td><?php echo $row['Venue']?></td>
                     <td><a href="record_form.php?recordID=<?php echo $row['recordID']?>">Update</a></td>
+                    <td><a href="record_form.php?recordID=<?php echo $row['recordID']?>">Delete</a></td>
                 </tr>
             <?php endforeach;?>
             </tbody>

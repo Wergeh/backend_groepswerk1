@@ -12,14 +12,28 @@ PrintNavbar();
     <div class="row">
 
         <?php
-        if ( ! is_numeric( $_GET['recordID']) ) die("Ongeldig argument " . $_GET['recordID'] . " opgegeven");
-
         //get data
-        $data = GetData( "select * from record where recordID=" . $_GET['recordID'] );
-        $row = $data[0]; //there's only 1 row in data
+        if ( count($old_post) > 0 )
+        {
+            $data = [ 0 => [
+                "record" => $old_post['record'],
+                "FK_meeteenheidID" => $old_post['FK_meeteenheidID'],
+                "worldrecords" => $old_post['worldrecords'],
+                "FK_plaatsID" => $old_post['FK_plaatsID'],
+                "date" => $old_post['date'],
+                "FK_atleetID" => $old_post['FK_atleetID'],
+                "FK_sportsID" => $old_post['FK_sportsID']
+            ]
+            ];
+        }
+        else $data = [ 0 => [ "record" => "", "FK_meeteenheidID" => "", "worldrecords" => "", "FK_plaatsID" => "", "date" => "", "FK_atleetID" => "", "FK_sportsID" => "" ]];
+        $row=$data[0];
+
+        //get template
+        $output = file_get_contents("templates/record_form.html");
 
         //add extra elements
-        $extra_elements['csrf_token'] = GenerateCSRF( "record_form.php"  );
+        $extra_elements['csrf_token'] = GenerateCSRF( "add.php"  );
         $extra_elements['select_meeteenheid'] = MakeSelect( $fkey = 'FK_meeteenheidID',
             $value = $row['FK_meeteenheidID'] ,
             $sql = "select meeteenheidID, meeteenheid from meeteenheid" );
@@ -32,10 +46,6 @@ PrintNavbar();
         $extra_elements['select_sports'] = MakeSelect( $fkey = 'FK_sportsID',
             $value = $row['FK_sportsID'] ,
             $sql = 'select sports.id, concat_ws(" ", sports.name,c.name) as sport from sports inner join cat c on sports.cat_id = c.id' );
-
-
-        //get template
-        $output = file_get_contents("templates/record_form.html");
 
         //merge
         $output = MergeViewWithData( $output, $data );
